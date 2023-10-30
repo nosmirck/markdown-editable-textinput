@@ -62,8 +62,8 @@ class _MyAppState extends State<MyApp> {
                           actionTooltipMessage: (type) =>
                               type.name.substring(0, 1).toUpperCase() +
                               type.name.substring(1),
-                          tootipPreferBelow: false,
-                          optionnalActionButtons: [
+                          tooltipPreferBelow: false,
+                          optionalActionButtons: [
                             ActionButton(
                                 widget: Icon(Icons.add),
                                 action: () => controller.text =

@@ -28,7 +28,7 @@ class MarkdownTextInput extends StatefulWidget {
   final List<MarkdownType> actions;
 
   /// List of custom action buttons
-  final List<ActionButton> optionnalActionButtons;
+  final List<ActionButton> optionalActionButtons;
 
   /// Optional controller to manage the input
   final TextEditingController? controller;
@@ -69,7 +69,7 @@ class MarkdownTextInput extends StatefulWidget {
   final String Function(MarkdownType type)? actionTooltipMessage;
 
   /// Prefer to display tooltip below the button
-  final bool? tootipPreferBelow;
+  final bool? tooltipPreferBelow;
 
   /// Constructor for [MarkdownTextInput]
   MarkdownTextInput(
@@ -97,9 +97,9 @@ class MarkdownTextInput extends StatefulWidget {
     this.imageDialogTextDecoration,
     this.customCancelDialogText,
     this.customSubmitDialogText,
-    this.optionnalActionButtons = const [],
+    this.optionalActionButtons = const [],
     this.actionTooltipMessage,
-    this.tootipPreferBelow,
+    this.tooltipPreferBelow,
   });
 
   @override
@@ -212,10 +212,10 @@ class _MarkdownTextInputState extends State<MarkdownTextInput> {
                   ...widget.actions.map((type) {
                     return Tooltip(
                         message: widget.actionTooltipMessage?.call(type) ?? '',
-                        preferBelow: widget.tootipPreferBelow,
+                        preferBelow: widget.tooltipPreferBelow,
                         child: _buildAction(type, context));
                   }).toList(),
-                  ...widget.optionnalActionButtons
+                  ...widget.optionalActionButtons
                       .map((ActionButton optionActionButton) {
                     return _basicInkwell(optionActionButton,
                         customOnTap: optionActionButton.action);
